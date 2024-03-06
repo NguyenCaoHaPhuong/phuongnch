@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khảo sát Luật Giao thông - Kết quả</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E6F7FF; /* Light blue background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff; /* White content background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        #answers {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>Khảo sát Luật Giao thông - Kết quả</h1>
+
+    <div id="answers">
+        <!-- Answers will be displayed here -->
+    </div>
+</div>
+
+<script>
+    // Lấy câu trả lời từ localStorage
+    const answers = [];
+    for (let i = 31; i <= 40; i++) {
+        const answer = localStorage.getItem(`answer${i}`);
+        if (answer) {
+            answers.push({ question: i, answer });
+        }
+    }
+
+    // Hiển thị câu trả lời
+    const answersContainer = document.getElementById('answers');
+    if (answers.length > 0) {
+        answers.forEach(({ question, answer }) => {
+            const answerElement = document.createElement('p');
+            answerElement.innerHTML = `Câu ${question} (tự luận): ${answer}`;
+            answersContainer.appendChild(answerElement);
+        });
+    } else {
+        const noAnswersElement = document.createElement('p');
+        noAnswersElement.innerHTML = 'Không có câu trả lời nào được gửi.';
+        answersContainer.appendChild(noAnswersElement);
+    }
+</script>
+
+</body>
+</html>

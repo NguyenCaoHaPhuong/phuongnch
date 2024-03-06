@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khảo sát Luật Giao thông - Trang 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFE6FF; /* Màu nền bên ngoài */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 255vh;
+        }
+        #container {
+            max-width: 600px; /* Độ rộng của trang */
+            width: 100%;
+            padding: 0 30px; /* Phần padding để giữ nội dung từ viền trang */
+        }
+        #content {
+            background-color: #fff; /* Màu nền trong */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 0; /* Khoảng cách giữa khung và tiêu đề */
+        }
+        h1 {
+            border-bottom: 2px solid #FA04FF; /* Vạch kẻ dưới tiêu đề màu FA04FF */
+            padding-bottom: 10px; /* Khoảng cách giữa vạch kẻ và nội dung tiêu đề */
+            white-space: normal; /* Cho phép tiêu đề trải dài trên nhiều dòng */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="content">
+        <h1>Khảo sát Luật Giao thông - Trang 4</h1>
+
+        <form id="trafficSurveyForm4" onsubmit="submitTrafficSurveyPage4(event)">
+            <!-- Câu hỏi tự luận -->
+            <!-- Thay thế câu hỏi và câu trả lời tương ứng với trang mới -->
+            <label for="question31">Câu 31: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer31" name="question31" rows="4" cols="70" required></textarea>
+            </div>
+            <br>
+            <label for="question32">Câu 32: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer32" name="question32" rows="4" cols="70" required></textarea>
+            </div>
+            <br><label for="question33">Câu 33: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer33" name="question33" rows="4" cols="70" required></textarea>
+            </div>
+            <br><label for="question34">Câu 34: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer34" name="question34" rows="4" cols="70" required></textarea>
+            </div>
+            <br><label for="question35">Câu 35: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer35" name="question35" rows="4" cols="70" required></textarea>
+            </div>
+            <br><label for="question36">Câu 36: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer36" name="question36" rows="4" cols="70" required></textarea>
+            </div>
+            <br><label for="question37">Câu 37: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer37" name="question37" rows="4" cols="70" required></textarea>
+            </div>
+            <br><label for="question38">Câu 38: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer38" name="question38" rows="4" cols="70" required></textarea>
+            </div>
+            <br><label for="question39">Câu 39: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer39" name="question39" rows="4" cols="70" required></textarea>
+            </div>
+            <br><label for="question40">Câu 40: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <textarea id="answer40" name="question40" rows="4" cols="70" required></textarea>
+            </div>
+            <br>
+            <button type="button" onclick="goToNextPage()">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Lấy phần tử form
+    const form = document.getElementById('trafficSurveyForm4');
+
+    // Thêm sự kiện submit cho form
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Lấy tất cả các câu trả lời từ các ô textarea
+        const answers = [];
+        for (let i = 31; i <= 40; i++) {
+            const questionId = `question${i}`;
+            const answerId = `answer${i}`;
+            const answer = document.getElementById(answerId).value;
+
+            if (answer) {
+                answers.push({ question: i, answer });
+                localStorage.setItem(`answer${i}`, answer);
+            }
+        }
+
+        // Hiển thị câu trả lời và chuyển đến trang submit.html
+        if (answers.length > 0) {
+            answers.forEach(({ question, answer }) => {
+                console.log(`Câu ${question} (tự luận): ${answer}`);
+            });
+
+            window.location.href = "submit.html";
+        } else {
+            alert("Vui lòng điền đầy đủ câu trả lời.");
+        }
+    });
+});
+
+// Hàm chuyển sang trang mới
+function goToNextPage() {
+    window.location.href = "submit.html";
+}
+</script>
+
+</body>
+</html>

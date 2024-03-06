@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khảo sát Luật Giao thông</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFE6FF; /* Màu nền bên ngoài */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200vh;
+        }
+        #container {
+            max-width: 600px; /* Độ rộng của trang */
+            width: 100%;
+            padding: 0 30px; /* Phần padding để giữ nội dung từ viền trang */
+        }
+        #content {
+            background-color: #fff; /* Màu nền trong */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 0; /* Khoảng cách giữa khung và tiêu đề */
+        }
+        h1 {
+            border-bottom: 2px solid #FA04FF; /* Vạch kẻ dưới tiêu đề màu FA04FF */
+            padding-bottom: 10px; /* Khoảng cách giữa vạch kẻ và nội dung tiêu đề */
+            white-space: normal; /* Cho phép tiêu đề trải dài trên nhiều dòng */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #9404ad;
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #9404ad;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="content">
+        <h1>Khảo sát Luật Giao thông</h1>
+
+        <form id="trafficSurveyForm" onsubmit="submitTrafficSurvey(event)">
+            <!-- Câu hỏi trắc nghiệm -->
+            <label for="question1">Câu 1: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <input type="radio" id="answerTrue" name="question1" value="true" required>
+                <label for="answerTrue">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answerFalse" name="question1" value="false" required>
+                <label for="answerFalse">Sai</label>
+            </div>
+            <br>
+            <label for="question2">Câu 2: [Đặt câu hỏi của bạn ở đây]</label>
+            <div>
+                <input type="radio" id="answer2True" name="question2" value="true" required>
+                <label for="answer2True">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answer2False" name="question2" value="false" required>
+                <label for="answer2False">Sai</label>
+            </div> 
+            <br>
+            <label for="question3">Câu 3: [Đặt câu hỏi của bạn ở đây] </label>
+            <div>
+                <input type="radio" id="answer3True" name="question3" value="true" required>
+                <label for="answer3True">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answer3False" name="question3" value="false" required>
+                <label for="answer3False">Sai</label>
+            </div> 
+            <br>
+            <label for="question3">Câu 4:[Đặt câu hỏi của bạn ở đây] </label>
+            <div>
+                <input type="radio" id="answer4True" name="question4" value="true" required>
+                <label for="answer4True">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answer4False" name="question4" value="false" required>
+                <label for="answer4False">Sai</label>
+            </div>
+            <br>
+            <label for="question3">Câu 5: [Đặt câu hỏi của bạn ở đây] </label>
+            <div>
+                <input type="radio" id="answer5True" name="question5" value="true" required>
+                <label for="answer5True">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answer5False" name="question5" value="false" required>
+                <label for="answer5False">Sai</label>
+            </div>
+            <br>
+            <label for="question6">Câu 6: [Đặt câu hỏi của bạn ở đây] </label>
+            <div>
+                <input type="radio" id="answer6True" name="question6" value="true" required>
+                <label for="answer6True">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answer6False" name="question6" value="false" required>
+                <label for="answer6False">Sai</label>
+            </div><br>
+            <label for="question7">Câu 7: [Đặt câu hỏi của bạn ở đây] </label>
+            <div>
+                <input type="radio" id="answer7True" name="question7" value="true" required>
+                <label for="answer7True">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answer7False" name="question7" value="false" required>
+                <label for="answer7False">Sai</label>
+            </div><br>
+            <label for="question8">Câu 8: [Đặt câu hỏi của bạn ở đây] </label>
+            <div>
+                <input type="radio" id="answer8True" name="question8" value="true" required>
+                <label for="answer8True">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answer8False" name="question8" value="false" required>
+                <label for="answer8False">Sai</label>
+            </div><br>
+            <label for="question9">Câu 9: [Đặt câu hỏi của bạn ở đây] </label>
+            <div>
+                <input type="radio" id="answer9True" name="question9" value="true" required>
+                <label for="answer9True">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answer9False" name="question9" value="false" required>
+                <label for="answer9False">Sai</label>
+            </div><br>
+            <label for="question10">Câu 10: [Đặt câu hỏi của bạn ở đây] </label>
+            <div>
+                <input type="radio" id="answer10True" name="question10" value="true" required>
+                <label for="answer10True">Đúng</label>
+            </div>
+            <div>
+                <input type="radio" id="answer10False" name="question10" value="false" required>
+                <label for="answer10False">Sai</label>
+            </div>
+            <br>
+            <button type="button" onclick="goToNextPage()">Tiếp theo</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function submitTrafficSurvey(event) {
+        event.preventDefault();
+
+    // Lấy dữ liệu từ biểu mẫu
+    var formData = {};
+    for (let i = 1; i <= 10; i++) {
+        const answer = document.querySelector(`input[name="question${i}"]:checked`);
+        if (answer) {
+            formData[`question${i}`] = answer.value;
+            localStorage.setItem(`answer${i}`, answer.value);
+        }
+    }
+
+    // Chuyển hướng đến trang submit.html
+    window.location.href = "submit.html";
+    }
+    function goToNextPage() {
+        // Chuyển sang trang mới
+        window.location.href = "page2.html";
+    }
+</script>
+
+</body>
+</html>
